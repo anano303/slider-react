@@ -12,25 +12,36 @@ export default function Slider() {
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   });
+  const scrollRef = useRef(null);
   return (
     <div className="Carousel">
-      <motion.div className="btns">
-        <button>
-          <img src={left} />
-        </button>
-        <button>
-          <img src={right} />
-        </button>
-      </motion.div>
       <div className="header">
         <h1>საბავშვო ბაღი</h1>
       </div>
+
       <motion.div
-        ref={carousel}
+        ref={scrollRef}
         className="carousel1"
         whileTap={{ cursor: "grabbing" }}
       >
+        <motion.div className="btns">
+          <button
+            onClick={() => {
+              scrollRef.current.scrollLeft -= 100;
+            }}
+          >
+            <img src={left} />
+          </button>
+          <button
+            onClick={() => {
+              scrollRef.current.scrollLeft += 100;
+            }}
+          >
+            <img src={right} />
+          </button>
+        </motion.div>
         <motion.div
+          ref={carousel}
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
           className="inner-carousel"

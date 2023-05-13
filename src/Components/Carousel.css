@@ -1,5 +1,4 @@
 .header {
-  width: 100%;
   background-color: rgb(4, 52, 4);
   height: 50px;
   color: white;
@@ -27,17 +26,34 @@
 }
 .carousel1 {
   cursor: grab;
-  overflow: hidden;
+  overflow-x: hidden;
+  height: 250px;
+  width: 100vw;
 }
 
 .btns button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .btns {
   display: flex;
   gap: 15px;
   position: absolute;
-  top: 68%;
   left: 91%;
+}
+@media screen and (max-width: 1000px) {
+  .btns {
+    left: 89%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .btns {
+    left: 83%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .btns {
+    left: 72%;
+  }
 }
