@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Fade, Zoom, Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import "./Slider1.css";
 import desktop from "./desktop.png";
 import slider2 from "./slider2.jpg";
 import slider3 from "./slider3.jpg";
@@ -31,10 +32,13 @@ export default function Slider() {
   return (
     <div className="slide-container">
       <Slide
-        autoplay={false}
+        autoplay={true}
         duration={3000}
         transitionDuration={1000}
         indicators={true}
+        indicatorContainerProps={{
+          style: { marginRight: "500px" },
+        }}
         arrows={false}
         onChange={(oldIndex, newIndex) => setActiveIndex(newIndex)}
       >
