@@ -1,0 +1,13 @@
+.footer {
+  background-color: chartreuse;
+  color: black;
+}
+ul {
+  list-style: none;
+  padding: 20px 100px 50px;
+}
+li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}

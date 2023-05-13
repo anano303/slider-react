@@ -36,9 +36,6 @@ export default function Slider() {
         duration={3000}
         transitionDuration={1000}
         indicators={true}
-        indicatorContainerProps={{
-          style: { marginRight: "500px" },
-        }}
         arrows={false}
         onChange={(oldIndex, newIndex) => setActiveIndex(newIndex)}
       >

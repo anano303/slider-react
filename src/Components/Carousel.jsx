@@ -5,7 +5,7 @@ import images from "./Images";
 import left from "./left arrow.png";
 import right from "./right arrow.png";
 
-export default function Slider() {
+export default function Carousel(props) {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
@@ -13,10 +13,14 @@ export default function Slider() {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   });
   const scrollRef = useRef(null);
+
   return (
     <div className="Carousel">
-      <div className="header">
-        <h1>საბავშვო ბაღი</h1>
+      <div
+        className="header"
+        style={{ backgroundColor: props.backgroundColor }}
+      >
+        <h1>{props.headerText}</h1>
       </div>
 
       <motion.div
